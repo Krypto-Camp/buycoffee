@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 import "./styles/globals.css";
+import { ChakraProvider } from '@chakra-ui/react'
 
 // This is the chain your dApp will work on.
 // Change this to the chain your app is built for.
@@ -14,7 +15,9 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <ThirdwebProvider activeChain={activeChain}>
-      <App />
+      <ChakraProvider>
+        <App />
+      </ChakraProvider>
     </ThirdwebProvider>
   </React.StrictMode>
 );
